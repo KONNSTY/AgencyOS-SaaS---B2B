@@ -1,0 +1,19 @@
+services:
+  agency-os:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agency-os:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      BASE_URL: ${BASE_URL:-http://localhost:3000}
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+      FIREBASE_SERVICE_ACCOUNT_PATH: /run/secrets/firebase-admin-key.json
+    volumes:
+      - ${FIREBASE_KEY_PATH:-./secrets/firebase-admin-key.json}:/run/secrets/firebase-admin-key.json:ro
+    ports:
+      - "127.0.0.1:3000:3000"
