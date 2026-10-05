@@ -1,0 +1,43 @@
+# Secrets and local configuration (at every directory depth)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*firebase-adminsdk*.json
+*service-account*.json
+*serviceAccount*.json
+credentials*.json
+*secret*.json
+appsettings*.json
+secrets/
+private/
+
+# Runtime data and generated files
+node_modules/
+coverage/
+dist/
+build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+data/
+backups/
+exports/
+public/firebase-runtime-config.js
+public/firebase-runtime-config.js.tmp
+
+# Internal deployment notes and OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.local.md
